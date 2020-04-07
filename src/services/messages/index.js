@@ -1,65 +1,7 @@
+import { getFlashInfo, getNotificationInfo } from './util';
+
 import styles from './index.module.css';
 
-
-function getFlashInfo(type) {
-    switch (type) {
-        case 'info':
-        case 'information':
-        default:
-            return {
-                class: 'info',
-                icon: 'info'
-            };
-        case 'warning':
-        case 'warn':
-        case 'alert':
-            return {
-                class: 'warning',
-                icon: 'warning'
-            };
-        case 'error':
-        case 'danger':
-            return {
-                class: 'error',
-                icon: 'warning'
-            };
-        case 'success':
-            return {
-                class: 'success',
-                icon: 'check'
-            };
-    }
-}
-
-function getNotificationInfo(type) {
-    switch (type) {
-        case 'info':
-        case 'information':
-        default:
-            return {
-                class: 'info',
-                icon: 'info'
-            };
-        case 'warning':
-        case 'warn':
-        case 'alert':
-            return {
-                class: 'alert',
-                icon: 'warning'
-            };
-        case 'error':
-        case 'danger':
-            return {
-                class: 'danger',
-                icon: 'warning'
-            };
-        case 'question':
-            return {
-                class: 'info',
-                icon: 'question'
-            };
-    }
-}
 
 export function addFlashMessage(message, { type = 'info', hideAfter = '5s' } = {}) {
     let container = document.getElementById('flash_message_holder');
